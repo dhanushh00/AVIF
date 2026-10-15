@@ -213,6 +213,10 @@
             background: #25d366;
         }
 
+        .social-icon.email {
+            background: #ea4335;
+        }
+
         .social-icon.phone {
             background: #333333;
         }
@@ -365,19 +369,24 @@
             animation: fadeUp 0.6s 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
         }
 
-        .stats-bar {
+        .social-links .social-link:nth-child(5) {
             opacity: 0;
-            animation: fadeUp 0.6s 0.75s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            animation: fadeUp 0.6s 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
         }
 
-        .contact-btn {
+        .stats-bar {
             opacity: 0;
             animation: fadeUp 0.6s 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
         }
 
+        .contact-btn {
+            opacity: 0;
+            animation: fadeUp 0.6s 0.9s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
         .footer {
             opacity: 0;
-            animation: fadeUp 0.6s 0.95s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            animation: fadeUp 0.6s 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
         }
 
         /* ---- Responsive ---- */
@@ -471,6 +480,17 @@
                 </div>
                 <i class="fas fa-arrow-right social-arrow"></i>
             </a>
+
+            <a href="mailto:avifdigital@gmail.com" class="social-link">
+                <div class="social-icon email">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="social-text">
+                    <h3>Email</h3>
+                    <p>avifdigital@gmail.com</p>
+                </div>
+                <i class="fas fa-arrow-right social-arrow"></i>
+            </a>
         </div>
 
         <!-- Stats -->
@@ -491,13 +511,16 @@
             </div>
         </div>
 
-        <!-- Contact -->
-        <div style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;">
+        <!-- Contact Buttons -->
+        <div style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; max-width: 440px; width: 100%;">
             <a href="tel:+919751989726" class="contact-btn">
-                <i class="fas fa-phone-alt"></i> Call Now
+                <i class="fas fa-phone-alt"></i> Call
             </a>
             <a href="https://wa.me/919751989726" target="_blank" rel="noopener noreferrer" class="contact-btn" style="background: #25d366; color: #ffffff;">
                 <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+            <a href="mailto:avifdigital@gmail.com" class="contact-btn" style="background: rgba(255,255,255,0.08); color: #ffffff; border: 1px solid rgba(255,255,255,0.15);">
+                <i class="fas fa-envelope"></i> Email
             </a>
         </div>
 
