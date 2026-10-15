@@ -566,30 +566,36 @@
             animation: popIn 0.8s 0.1s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
         }
 
+        /* Achievements bar appears right under profile */
+        .stats-bar {
+            opacity: 0;
+            animation: popIn 0.7s 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
         /* Boxes coming in one-by-one sequentially */
         .social-links .social-link:nth-child(1) {
             opacity: 0;
-            animation: popIn 0.7s 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+            animation: popIn 0.7s 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
         }
 
         .social-links .social-link:nth-child(2) {
             opacity: 0;
-            animation: popIn 0.7s 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+            animation: popIn 0.7s 0.68s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
         }
 
         .social-links .social-link:nth-child(3) {
             opacity: 0;
-            animation: popIn 0.7s 0.75s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+            animation: popIn 0.7s 0.86s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
         }
 
         .social-links .social-link:nth-child(4) {
             opacity: 0;
-            animation: popIn 0.7s 0.95s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+            animation: popIn 0.7s 1.04s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
         }
 
-        .stats-bar {
+        .profile-bio {
             opacity: 0;
-            animation: popIn 0.7s 1.15s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+            animation: popIn 0.7s 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
         }
 
         .footer {
@@ -708,7 +714,24 @@
             <h1 class="profile-name">AVIF</h1>
             <p class="profile-title">Digital Marketing</p>
             <div class="profile-divider"></div>
-            <p class="profile-bio">Helping brands grow through strategic digital marketing, creative content & social media expertise.</p>
+        </div>
+
+        <!-- Stats (Achievements) -->
+        <div class="stats-bar">
+            <div class="stat">
+                <div class="stat-value" data-target="50">0</div>
+                <div class="stat-label">Clients</div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+                <div class="stat-value" data-target="120">0</div>
+                <div class="stat-label">Projects</div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+                <div class="stat-value" data-target="5">0</div>
+                <div class="stat-label">Years</div>
+            </div>
         </div>
 
         <!-- Social Links -->
@@ -758,23 +781,8 @@
             </a>
         </div>
 
-        <!-- Stats -->
-        <div class="stats-bar">
-            <div class="stat">
-                <div class="stat-value" data-target="50">0</div>
-                <div class="stat-label">Clients</div>
-            </div>
-            <div class="stat-divider"></div>
-            <div class="stat">
-                <div class="stat-value" data-target="120">0</div>
-                <div class="stat-label">Projects</div>
-            </div>
-            <div class="stat-divider"></div>
-            <div class="stat">
-                <div class="stat-value" data-target="5">0</div>
-                <div class="stat-label">Years</div>
-            </div>
-        </div>
+        <!-- Bio Description -->
+        <p class="profile-bio">Helping brands grow through strategic digital marketing, creative content & social media expertise.</p>
 
         <!-- Footer -->
         <div class="footer">
@@ -804,7 +812,7 @@
 
         // 1. Rapid Fast Number Adding Counter
         function startCounterAnimation() {
-            // Slight delay so the box lands first then numbers roll fast
+            // Stats box lands at 300ms, start rapid counting right as it pops in
             setTimeout(() => {
                 const statValues = document.querySelectorAll('.stat-value');
                 statValues.forEach(stat => {
@@ -828,7 +836,7 @@
                     }
                     requestAnimationFrame(updateNumber);
                 });
-            }, 600);
+            }, 320);
         }
 
         // 2. Interactive Cursor Dot & Ambient Glow Follower
