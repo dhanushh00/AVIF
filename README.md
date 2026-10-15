@@ -1,6 +1,6 @@
-# Francees David | AVIF Digital
+# AVIF | Digital Marketing
 
-A modern, professional single-page showcase for Francees David — AVIF Digital Marketing Agency & Strategies.
+A modern, professional single-page showcase for AVIF — Digital Marketing Agency & Strategies.
 
 ## 🚀 Features
 
