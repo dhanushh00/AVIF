@@ -209,6 +209,14 @@
             background: #ff0000;
         }
 
+        .social-icon.whatsapp {
+            background: #25d366;
+        }
+
+        .social-icon.phone {
+            background: #333333;
+        }
+
         .social-text {
             flex: 1;
         }
@@ -352,9 +360,14 @@
             animation: fadeUp 0.6s 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
         }
 
+        .social-links .social-link:nth-child(4) {
+            opacity: 0;
+            animation: fadeUp 0.6s 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
         .stats-bar {
             opacity: 0;
-            animation: fadeUp 0.6s 0.65s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            animation: fadeUp 0.6s 0.75s cubic-bezier(0.4, 0, 0.2, 1) forwards;
         }
 
         .contact-btn {
@@ -448,6 +461,16 @@
                 </div>
                 <i class="fas fa-arrow-right social-arrow"></i>
             </a>
+            <a href="https://wa.me/919751989726" target="_blank" rel="noopener noreferrer" class="social-link">
+                <div class="social-icon whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                </div>
+                <div class="social-text">
+                    <h3>WhatsApp</h3>
+                    <p>+91 97519 89726</p>
+                </div>
+                <i class="fas fa-arrow-right social-arrow"></i>
+            </a>
         </div>
 
         <!-- Stats -->
@@ -469,9 +492,14 @@
         </div>
 
         <!-- Contact -->
-        <a href="mailto:francis.david@email.com" class="contact-btn">
-            Get In Touch <i class="fas fa-arrow-right"></i>
-        </a>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;">
+            <a href="tel:+919751989726" class="contact-btn">
+                <i class="fas fa-phone-alt"></i> Call Now
+            </a>
+            <a href="https://wa.me/919751989726" target="_blank" rel="noopener noreferrer" class="contact-btn" style="background: #25d366; color: #ffffff;">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+        </div>
 
         <!-- Footer -->
         <div class="footer">
