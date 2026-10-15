@@ -1,13 +1,13 @@
-# Francis David | AVIF Digital
+# AVIF | Digital Marketing
 
-A modern, professional single-page showcase for Francis David — Digital Marketing Strategist.
+A modern, professional single-page showcase for AVIF — Digital Marketing Agency & Strategies.
 
 ## 🚀 Features
 
 - **Minimalist Matte Black Theme** with subtle radial lighting and grid effect
 - **Direct Social Media Showcase**:
   - 📷 **Instagram**: [@avifdigital](https://www.instagram.com/avifdigital/?hl=en)
-  - 📘 **Facebook**: Francis David
+  - 📘 **Facebook**: [@avifdigital](https://www.facebook.com/)
   - 💬 **WhatsApp**: [+91 97519 89726](https://wa.me/919751989726)
   - ✉️ **Email**: [avifdigital@gmail.com](mailto:avifdigital@gmail.com)
 - **Direct Quick Action Buttons**: Call, WhatsApp, and Email
@@ -15,4 +15,4 @@ A modern, professional single-page showcase for Francis David — Digital Market
 
 ---
 
-© 2026 Francis David. All Rights Reserved.
+© 2026 AVIF. All Rights Reserved.
