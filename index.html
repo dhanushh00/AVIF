@@ -29,6 +29,74 @@
             -webkit-font-smoothing: antialiased;
         }
 
+        /* ---- Preloader ---- */
+        #preloader {
+            position: fixed;
+            inset: 0;
+            background: #000000;
+            z-index: 99999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.6s ease;
+        }
+
+        #preloader.loaded {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .loader-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .loader-logo {
+            width: 80px;
+            height: 80px;
+            animation: pulseGlow 1.8s ease-in-out infinite;
+        }
+
+        .loader-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .loader-line {
+            width: 140px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .loader-line::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 40%;
+            background: linear-gradient(90deg, transparent, #ffffff, transparent);
+            animation: loaderSlide 1.2s ease-in-out infinite;
+        }
+
+        @keyframes loaderSlide {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(350%); }
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { transform: scale(1); filter: drop-shadow(0 0 0 rgba(255,255,255,0)); }
+            50% { transform: scale(1.08); filter: drop-shadow(0 0 16px rgba(255,255,255,0.4)); }
+        }
+
         /* ---- Subtle Background ---- */
         .bg-grid {
             position: fixed;
@@ -182,6 +250,14 @@
             position: relative;
             overflow: hidden;
             box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+            cursor: pointer;
+        }
+
+        .profile-avatar:hover {
+            transform: scale(1.06) rotate(2deg);
+            border-color: rgba(255,255,255,0.3);
+            box-shadow: 0 16px 50px rgba(255,255,255,0.08);
         }
 
         .profile-avatar img {
@@ -190,6 +266,12 @@
             object-fit: contain;
             display: block;
             filter: drop-shadow(0 2px 8px rgba(255,255,255,0.1));
+            transition: transform 0.4s ease, filter 0.4s ease;
+        }
+
+        .profile-avatar:hover img {
+            transform: scale(1.05);
+            filter: drop-shadow(0 4px 14px rgba(255,255,255,0.3));
         }
 
         .profile-name {
@@ -199,6 +281,11 @@
             color: #ffffff;
             margin-bottom: 8px;
             letter-spacing: -0.5px;
+            transition: letter-spacing 0.3s ease;
+        }
+
+        .profile:hover .profile-name {
+            letter-spacing: 0.5px;
         }
 
         .profile-title {
@@ -215,6 +302,12 @@
             height: 1px;
             background: rgba(255,255,255,0.15);
             margin: 0 auto 16px;
+            transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1), background 0.4s ease;
+        }
+
+        .profile:hover .profile-divider {
+            width: 80px;
+            background: rgba(255,255,255,0.4);
         }
 
         .profile-bio {
@@ -241,32 +334,39 @@
             gap: 16px;
             padding: 18px 24px;
             background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.07);
             border-radius: 14px;
             text-decoration: none;
             color: #ffffff;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
             position: relative;
             overflow: hidden;
+            backdrop-filter: blur(8px);
         }
 
-        .social-link::before {
+        /* Diagonal shine sheen on hover */
+        .social-link::after {
             content: '';
             position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(255,255,255,0.05), transparent);
-            opacity: 0;
-            transition: opacity 0.3s ease;
+            top: 0;
+            left: -100%;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+            transform: skewX(-20deg);
+            transition: left 0.6s ease;
+            pointer-events: none;
+        }
+
+        .social-link:hover::after {
+            left: 150%;
         }
 
         .social-link:hover {
-            transform: translateY(-2px);
-            border-color: rgba(255,255,255,0.12);
-            box-shadow: 0 8px 32px rgba(0,0,0,0.4);
-        }
-
-        .social-link:hover::before {
-            opacity: 1;
+            transform: translateY(-4px) scale(1.015);
+            background: rgba(255,255,255,0.05);
+            border-color: rgba(255,255,255,0.22);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.6), 0 0 20px rgba(255,255,255,0.04);
         }
 
         .social-icon {
@@ -278,11 +378,12 @@
             justify-content: center;
             font-size: 1.3rem;
             flex-shrink: 0;
-            transition: transform 0.3s ease;
+            transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease;
         }
 
         .social-link:hover .social-icon {
-            transform: scale(1.05);
+            transform: scale(1.12) rotate(-4deg);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.4);
         }
 
         .social-icon.instagram {
@@ -293,20 +394,12 @@
             background: #1877f2;
         }
 
-        .social-icon.youtube {
-            background: #ff0000;
-        }
-
         .social-icon.whatsapp {
             background: #25d366;
         }
 
         .social-icon.email {
             background: #ea4335;
-        }
-
-        .social-icon.phone {
-            background: #333333;
         }
 
         .social-text {
@@ -318,22 +411,32 @@
             font-size: 1rem;
             font-weight: 600;
             margin-bottom: 2px;
+            transition: color 0.3s ease;
+        }
+
+        .social-link:hover .social-text h3 {
+            color: #ffffff;
         }
 
         .social-text p {
             font-size: 0.8rem;
             color: rgba(255,255,255,0.35);
+            transition: color 0.3s ease;
+        }
+
+        .social-link:hover .social-text p {
+            color: rgba(255,255,255,0.6);
         }
 
         .social-arrow {
             color: rgba(255,255,255,0.2);
             font-size: 0.85rem;
-            transition: all 0.3s ease;
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.3s ease;
         }
 
         .social-link:hover .social-arrow {
-            color: rgba(255,255,255,0.5);
-            transform: translateX(4px);
+            color: #ffffff;
+            transform: translateX(6px) scale(1.15);
         }
 
         /* ---- Stats Bar ---- */
@@ -345,6 +448,15 @@
 
         .stat {
             text-align: center;
+            padding: 8px 14px;
+            border-radius: 10px;
+            transition: transform 0.3s ease, background 0.3s ease;
+            cursor: default;
+        }
+
+        .stat:hover {
+            transform: translateY(-3px);
+            background: rgba(255,255,255,0.03);
         }
 
         .stat-value {
@@ -354,6 +466,12 @@
             color: #ffffff;
             line-height: 1;
             margin-bottom: 4px;
+            transition: color 0.3s ease;
+        }
+
+        .stat:hover .stat-value {
+            color: #ffffff;
+            text-shadow: 0 0 12px rgba(255,255,255,0.5);
         }
 
         .stat-label {
@@ -361,6 +479,11 @@
             color: rgba(255,255,255,0.3);
             text-transform: uppercase;
             letter-spacing: 1.5px;
+            transition: color 0.3s ease;
+        }
+
+        .stat:hover .stat-label {
+            color: rgba(255,255,255,0.6);
         }
 
         .stat-divider {
@@ -500,6 +623,16 @@
     </style>
 </head>
 <body>
+    <!-- Premium Preloader -->
+    <div id="preloader">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <img src="images/logo-white.png" alt="AVIF Loading...">
+            </div>
+            <div class="loader-line"></div>
+        </div>
+    </div>
+
     <div class="bg-grid"></div>
     <div class="bg-glow"></div>
 
@@ -598,5 +731,23 @@
             <p>&copy; 2026 AVIF. All Rights Reserved.</p>
         </div>
     </main>
+
+    <script>
+        // Smooth Preloader Dismissal
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('preloader');
+            setTimeout(() => {
+                preloader.classList.add('loaded');
+            }, 600);
+        });
+
+        // Safety timeout
+        setTimeout(() => {
+            const preloader = document.getElementById('preloader');
+            if (preloader && !preloader.classList.contains('loaded')) {
+                preloader.classList.add('loaded');
+            }
+        }, 2500);
+    </script>
 </body>
 </html>
