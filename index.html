@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Francis David | Digital Marketing Expert</title>
+    <meta name="description" content="Francis David - Digital Marketing Expert specializing in SEO, Social Media Marketing, Content Strategy, and Brand Growth. Let's elevate your digital presence.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader">
+            <span class="loader-text">FD</span>
+            <div class="loader-bar"></div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <span class="logo-text">Francis<span class="logo-accent">David</span></span>
+            </a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="#contact" class="nav-cta">Let's Talk</a>
+                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+        </div>
+        <div class="hero-particles" id="particles"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-badge" data-animate="fade-up">
+                        <span class="badge-dot"></span>
+                        Available for Projects
+                    </div>
+                    <h1 data-animate="fade-up" data-delay="100">
+                        <span class="hero-greeting">Hello, I'm</span>
+                        <span class="hero-name">Francis David</span>
+                        <span class="hero-title">Digital Marketing <span class="text-gradient">Strategist</span></span>
+                    </h1>
+                    <p class="hero-description" data-animate="fade-up" data-delay="200">
+                        I help brands grow their digital presence through data-driven marketing strategies, 
+                        compelling content, and innovative social media campaigns that deliver measurable results.
+                    </p>
+                    <div class="hero-buttons" data-animate="fade-up" data-delay="300">
+                        <a href="#portfolio" class="btn btn-primary">
+                            <span>View My Work</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="#contact" class="btn btn-outline">
+                            <span>Get In Touch</span>
+                        </a>
+                    </div>
+                    <div class="hero-social" data-animate="fade-up" data-delay="400">
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-visual" data-animate="fade-left" data-delay="200">
+                    <div class="hero-image-wrapper">
+                        <div class="hero-image-frame">
+                            <div class="hero-avatar">
+                                <div class="avatar-placeholder">
+                                    <span>FD</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hero-float-card card-1">
+                            <i class="fas fa-chart-line"></i>
+                            <div>
+                                <strong>250%</strong>
+                                <span>Avg. ROI Growth</span>
+                            </div>
+                        </div>
+                        <div class="hero-float-card card-2">
+                            <i class="fas fa-users"></i>
+                            <div>
+                                <strong>50+</strong>
+                                <span>Happy Clients</span>
+                            </div>
+                        </div>
+                        <div class="hero-float-card card-3">
+                            <i class="fas fa-bullseye"></i>
+                            <div>
+                                <strong>100+</strong>
+                                <span>Campaigns</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator">
+            <a href="#about">
+                <span>Scroll Down</span>
+                <div class="scroll-mouse">
+                    <div class="scroll-wheel"></div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about section" id="about">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">About Me</span>
+                <h2 class="section-title">Turning Ideas Into <span class="text-gradient">Digital Success</span></h2>
+            </div>
+            <div class="about-content">
+                <div class="about-image" data-animate="fade-right">
+                    <div class="about-img-wrapper">
+                        <div class="about-avatar-large">
+                            <span>FD</span>
+                        </div>
+                        <div class="experience-badge">
+                            <span class="exp-number">5+</span>
+                            <span class="exp-text">Years Experience</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-text" data-animate="fade-left">
+                    <h3>Digital Marketing Expert & Brand Strategist</h3>
+                    <p>
+                        I'm Francis David, a passionate digital marketer with over 5 years of experience helping 
+                        businesses thrive in the digital landscape. I specialize in creating comprehensive marketing 
+                        strategies that combine SEO, social media marketing, content creation, and paid advertising 
+                        to drive real business growth.
+                    </p>
+                    <p>
+                        My approach is data-driven and results-oriented. I believe in understanding your audience, 
+                        crafting compelling narratives, and leveraging the right platforms to maximize your brand's 
+                        reach and impact. Whether you're a startup looking to establish your online presence or an 
+                        established brand aiming to scale, I've got you covered.
+                    </p>
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Data-Driven Strategy</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Creative Content</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>ROI Focused</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Brand Building</span>
+                        </div>
+                    </div>
+                    <div class="about-skills">
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span>Social Media Marketing</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" data-width="95"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span>SEO & SEM</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" data-width="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span>Content Strategy</span>
+                                <span>92%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" data-width="92"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span>Paid Advertising</span>
+                                <span>88%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" data-width="88"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#contact" class="btn btn-primary">
+                        <span>Download CV</span>
+                        <i class="fas fa-download"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services section" id="services">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">What I Do</span>
+                <h2 class="section-title">Services That <span class="text-gradient">Drive Growth</span></h2>
+                <p class="section-subtitle">Comprehensive digital marketing solutions tailored to your business needs</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" data-animate="fade-up" data-delay="0">
+                    <div class="service-icon">
+                        <i class="fas fa-hashtag"></i>
+                    </div>
+                    <h3>Social Media Marketing</h3>
+                    <p>Strategic social media campaigns that build engaged communities and drive meaningful conversions across all major platforms.</p>
+                    <ul class="service-features">
+                        <li>Content Calendar Planning</li>
+                        <li>Community Management</li>
+                        <li>Influencer Partnerships</li>
+                    </ul>
+                    <a href="#contact" class="service-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="service-card featured" data-animate="fade-up" data-delay="100">
+                    <div class="service-badge">Most Popular</div>
+                    <div class="service-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>SEO Optimization</h3>
+                    <p>Data-driven SEO strategies that improve your search rankings, increase organic traffic, and boost your online visibility.</p>
+                    <ul class="service-features">
+                        <li>Keyword Research & Strategy</li>
+                        <li>On-Page & Technical SEO</li>
+                        <li>Link Building</li>
+                    </ul>
+                    <a href="#contact" class="service-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="service-card" data-animate="fade-up" data-delay="200">
+                    <div class="service-icon">
+                        <i class="fas fa-pen-fancy"></i>
+                    </div>
+                    <h3>Content Marketing</h3>
+                    <p>Compelling content that tells your brand story, engages your audience, and establishes you as an industry thought leader.</p>
+                    <ul class="service-features">
+                        <li>Blog & Article Writing</li>
+                        <li>Video Content Strategy</li>
+                        <li>Email Marketing</li>
+                    </ul>
+                    <a href="#contact" class="service-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="service-card" data-animate="fade-up" data-delay="0">
+                    <div class="service-icon">
+                        <i class="fas fa-ad"></i>
+                    </div>
+                    <h3>Paid Advertising</h3>
+                    <p>High-performing ad campaigns on Google, Facebook, and Instagram that maximize your ROI and drive targeted traffic.</p>
+                    <ul class="service-features">
+                        <li>Google Ads Management</li>
+                        <li>Facebook & Instagram Ads</li>
+                        <li>Retargeting Campaigns</li>
+                    </ul>
+                    <a href="#contact" class="service-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="service-card" data-animate="fade-up" data-delay="100">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3>Analytics & Reporting</h3>
+                    <p>In-depth analytics and actionable insights that help you understand performance and make data-driven decisions.</p>
+                    <ul class="service-features">
+                        <li>Performance Dashboards</li>
+                        <li>A/B Testing</li>
+                        <li>Conversion Optimization</li>
+                    </ul>
+                    <a href="#contact" class="service-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="service-card" data-animate="fade-up" data-delay="200">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Brand Strategy</h3>
+                    <p>Comprehensive brand positioning that differentiates you from competitors and creates lasting emotional connections.</p>
+                    <ul class="service-features">
+                        <li>Brand Identity Design</li>
+                        <li>Market Positioning</li>
+                        <li>Competitive Analysis</li>
+                    </ul>
+                    <a href="#contact" class="service-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card" data-animate="fade-up">
+                    <div class="stat-icon"><i class="fas fa-briefcase"></i></div>
+                    <div class="stat-number" data-count="50">0</div>
+                    <div class="stat-label">Clients Worldwide</div>
+                </div>
+                <div class="stat-card" data-animate="fade-up" data-delay="100">
+                    <div class="stat-icon"><i class="fas fa-rocket"></i></div>
+                    <div class="stat-number" data-count="120">0</div>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+                <div class="stat-card" data-animate="fade-up" data-delay="200">
+                    <div class="stat-icon"><i class="fas fa-trophy"></i></div>
+                    <div class="stat-number" data-count="15">0</div>
+                    <div class="stat-label">Awards Won</div>
+                </div>
+                <div class="stat-card" data-animate="fade-up" data-delay="300">
+                    <div class="stat-icon"><i class="fas fa-coffee"></i></div>
+                    <div class="stat-number" data-count="2500">0</div>
+                    <div class="stat-label">Cups of Coffee</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio section" id="portfolio">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">My Work</span>
+                <h2 class="section-title">Featured <span class="text-gradient">Projects</span></h2>
+                <p class="section-subtitle">A showcase of successful digital marketing campaigns and strategies</p>
+            </div>
+            <div class="portfolio-filters" data-animate="fade-up">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="social">Social Media</button>
+                <button class="filter-btn" data-filter="seo">SEO</button>
+                <button class="filter-btn" data-filter="branding">Branding</button>
+                <button class="filter-btn" data-filter="ads">Paid Ads</button>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-card" data-category="social" data-animate="fade-up">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder" style="background: linear-gradient(135deg, #667eea, #764ba2);">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <a href="#" class="portfolio-link"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-category">Social Media</span>
+                        <h3>E-Commerce Brand Growth</h3>
+                        <p>Grew Instagram following from 2K to 50K in 6 months with 5x engagement rate improvement.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-card" data-category="seo" data-animate="fade-up" data-delay="100">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder" style="background: linear-gradient(135deg, #f093fb, #f5576c);">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <a href="#" class="portfolio-link"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-category">SEO</span>
+                        <h3>SaaS Startup SEO Strategy</h3>
+                        <p>Achieved 300% increase in organic traffic and first-page rankings for 25+ target keywords.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-card" data-category="branding" data-animate="fade-up" data-delay="200">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder" style="background: linear-gradient(135deg, #4facfe, #00f2fe);">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <a href="#" class="portfolio-link"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-category">Branding</span>
+                        <h3>Restaurant Chain Rebrand</h3>
+                        <p>Complete digital rebrand resulting in 40% increase in online orders and brand recognition.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-card" data-category="ads" data-animate="fade-up">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder" style="background: linear-gradient(135deg, #43e97b, #38f9d7);">
+                            <i class="fas fa-ad"></i>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <a href="#" class="portfolio-link"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-category">Paid Ads</span>
+                        <h3>Fitness App Launch Campaign</h3>
+                        <p>Generated 10,000+ app downloads in the first month with a \$2.50 cost per acquisition.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-card" data-category="social" data-animate="fade-up" data-delay="100">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder" style="background: linear-gradient(135deg, #fa709a, #fee140);">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <a href="#" class="portfolio-link"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-category">Social Media</span>
+                        <h3>YouTube Channel Growth</h3>
+                        <p>Scaled a tech review channel from 0 to 100K subscribers with strategic content planning.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-card" data-category="seo" data-animate="fade-up" data-delay="200">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder" style="background: linear-gradient(135deg, #a18cd1, #fbc2eb);">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <a href="#" class="portfolio-link"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-category">SEO</span>
+                        <h3>E-Commerce SEO Overhaul</h3>
+                        <p>Boosted organic revenue by 180% through technical SEO fixes and content optimization.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials section" id="testimonials">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">Testimonials</span>
+                <h2 class="section-title">What Clients <span class="text-gradient">Say</span></h2>
+                <p class="section-subtitle">Trusted by businesses worldwide to deliver exceptional results</p>
+            </div>
+            <div class="testimonials-slider" data-animate="fade-up">
+                <div class="testimonial-track" id="testimonial-track">
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Francis transformed our online presence completely. Our social media engagement increased by 400% and we saw a direct impact on our sales. Truly a digital marketing genius!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar" style="background: linear-gradient(135deg, #667eea, #764ba2);">
+                                <span>SK</span>
+                            </div>
+                            <div class="author-info">
+                                <strong>Sarah Kim</strong>
+                                <span>CEO, TechStart Inc.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Working with Francis was a game-changer for our brand. His SEO expertise helped us rank #1 for our most competitive keywords. The ROI has been incredible."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar" style="background: linear-gradient(135deg, #f093fb, #f5576c);">
+                                <span>MR</span>
+                            </div>
+                            <div class="author-info">
+                                <strong>Michael Rodriguez</strong>
+                                <span>Founder, GreenLeaf Co.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Francis doesn't just run ads — he builds brands. His strategic approach to our paid campaigns reduced our CPA by 60% while doubling our conversions. Highly recommend!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar" style="background: linear-gradient(135deg, #4facfe, #00f2fe);">
+                                <span>AP</span>
+                            </div>
+                            <div class="author-info">
+                                <strong>Aisha Patel</strong>
+                                <span>Marketing Director, Nova Fashion</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-controls">
+                    <button class="testimonial-btn prev" id="prev-btn" aria-label="Previous testimonial">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="testimonial-dots" id="testimonial-dots"></div>
+                    <button class="testimonial-btn next" id="next-btn" aria-label="Next testimonial">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta section">
+        <div class="container">
+            <div class="cta-content" data-animate="fade-up">
+                <h2>Ready to <span class="text-gradient">Grow</span> Your Business?</h2>
+                <p>Let's discuss how I can help you achieve your digital marketing goals and take your brand to the next level.</p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn btn-primary btn-lg">
+                        <span>Start a Project</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-lg">
+                        <span>Watch My Videos</span>
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact section" id="contact">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">Get In Touch</span>
+                <h2 class="section-title">Let's Work <span class="text-gradient">Together</span></h2>
+                <p class="section-subtitle">Have a project in mind? Let's create something amazing together.</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info" data-animate="fade-right">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email Me</h4>
+                            <a href="mailto:francis.david@email.com">francis.david@email.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4>Call Me</h4>
+                            <a href="tel:+1234567890">+1 (234) 567-890</a>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Location</h4>
+                            <span>Available Worldwide (Remote)</span>
+                        </div>
+                    </div>
+
+                    <div class="contact-socials">
+                        <h4>Follow Me</h4>
+                        <div class="social-links-large">
+                            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="social-card instagram">
+                                <i class="fab fa-instagram"></i>
+                                <span>Instagram</span>
+                            </a>
+                            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="social-card facebook">
+                                <i class="fab fa-facebook-f"></i>
+                                <span>Facebook</span>
+                            </a>
+                            <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" class="social-card youtube">
+                                <i class="fab fa-youtube"></i>
+                                <span>YouTube</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper" data-animate="fade-left">
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-group">
+                            <div class="form-field">
+                                <input type="text" id="name" name="name" required placeholder=" ">
+                                <label for="name">Your Name</label>
+                                <span class="form-line"></span>
+                            </div>
+                            <div class="form-field">
+                                <input type="email" id="email" name="email" required placeholder=" ">
+                                <label for="email">Your Email</label>
+                                <span class="form-line"></span>
+                            </div>
+                        </div>
+                        <div class="form-field">
+                            <input type="text" id="subject" name="subject" required placeholder=" ">
+                            <label for="subject">Subject</label>
+                            <span class="form-line"></span>
+                        </div>
+                        <div class="form-field">
+                            <select id="service" name="service" required>
+                                <option value="" disabled selected>Select a Service</option>
+                                <option value="social-media">Social Media Marketing</option>
+                                <option value="seo">SEO Optimization</option>
+                                <option value="content">Content Marketing</option>
+                                <option value="paid-ads">Paid Advertising</option>
+                                <option value="branding">Brand Strategy</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <span class="form-line"></span>
+                        </div>
+                        <div class="form-field">
+                            <textarea id="message" name="message" rows="5" required placeholder=" "></textarea>
+                            <label for="message">Your Message</label>
+                            <span class="form-line"></span>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg btn-block">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#" class="footer-logo">
+                        <span class="logo-text">Francis<span class="logo-accent">David</span></span>
+                    </a>
+                    <p>Helping brands grow their digital presence through innovative marketing strategies and data-driven campaigns.</p>
+                    <div class="footer-socials">
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">Social Media Marketing</a></li>
+                        <li><a href="#services">SEO Optimization</a></li>
+                        <li><a href="#services">Content Marketing</a></li>
+                        <li><a href="#services">Paid Advertising</a></li>
+                        <li><a href="#services">Brand Strategy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Stay Updated</h4>
+                    <p>Subscribe to get the latest digital marketing tips and insights.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit"><i class="fas fa-arrow-right"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Francis David. All Rights Reserved.</p>
+                <p>Crafted with <i class="fas fa-heart" style="color: #f5576c;"></i> by Francis David</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <a href="#home" class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
