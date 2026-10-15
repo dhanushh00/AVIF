@@ -8,7 +8,6 @@ A modern, professional single-page showcase for Francis David — Digital Market
 - **Direct Social Media Showcase**:
   - 📷 **Instagram**: [@avifdigital](https://www.instagram.com/avifdigital/?hl=en)
   - 📘 **Facebook**: Francis David
-  - 🎥 **YouTube**: AVIF Digital
   - 💬 **WhatsApp**: [+91 97519 89726](https://wa.me/919751989726)
   - ✉️ **Email**: [avifdigital@gmail.com](mailto:avifdigital@gmail.com)
 - **Direct Quick Action Buttons**: Call, WhatsApp, and Email
