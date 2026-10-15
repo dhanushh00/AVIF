@@ -827,21 +827,21 @@
             }
         }, 2500);
 
-        // 1. Rapid Fast Number Adding Counter
+        // 1. Slow Visible Counting Animation
         function startCounterAnimation() {
-            // Slight delay so the box lands first then numbers roll fast
+            // Delay so the stats bar appears first, then numbers count up
             setTimeout(() => {
                 const statValues = document.querySelectorAll('.stat-value');
                 statValues.forEach(stat => {
                     const target = parseInt(stat.getAttribute('data-target'), 10);
-                    const duration = 900; // Fast and snappy counting
+                    const duration = 2500; // Slow and visible counting
                     const startTime = performance.now();
 
                     function updateNumber(now) {
                         const elapsed = now - startTime;
                         const progress = Math.min(elapsed / duration, 1);
-                        // fast easeOutCubic
-                        const ease = 1 - Math.pow(1 - progress, 3);
+                        // Slow easeOutQuad — numbers climb steadily then ease to a stop
+                        const ease = 1 - Math.pow(1 - progress, 2);
                         const current = Math.floor(ease * target);
                         stat.textContent = current + '+';
 
