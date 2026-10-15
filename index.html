@@ -591,6 +591,47 @@
             animation: fadeUp 0.6s 0.85s cubic-bezier(0.4, 0, 0.2, 1) forwards;
         }
 
+        /* ---- Cursor Follower ---- */
+        .cursor-dot {
+            width: 8px;
+            height: 8px;
+            background: #ffffff;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            transition: width 0.2s ease, height 0.2s ease, opacity 0.2s ease;
+            mix-blend-mode: difference;
+        }
+
+        .cursor-glow {
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.035) 0%, transparent 65%);
+            position: fixed;
+            pointer-events: none;
+            z-index: 1;
+            transform: translate(-50%, -50%);
+            transition: transform 0.15s ease-out;
+            will-change: transform;
+        }
+
+        /* Hover expansion */
+        body.cursor-active .cursor-dot {
+            width: 32px;
+            height: 32px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: invert(1);
+        }
+
+        @media (hover: none) or (max-width: 768px) {
+            .cursor-dot, .cursor-glow {
+                display: none !important;
+            }
+        }
+
         /* ---- Responsive ---- */
         @media (max-width: 480px) {
             .profile-name {
@@ -632,6 +673,10 @@
             <div class="loader-line"></div>
         </div>
     </div>
+
+    <!-- Ambient Interactive Cursor Glow & Dot -->
+    <div class="cursor-dot" aria-hidden="true"></div>
+    <div class="cursor-glow" aria-hidden="true"></div>
 
     <div class="bg-grid"></div>
     <div class="bg-glow"></div>
@@ -710,17 +755,17 @@
         <!-- Stats -->
         <div class="stats-bar">
             <div class="stat">
-                <div class="stat-value">50+</div>
+                <div class="stat-value" data-target="50">0</div>
                 <div class="stat-label">Clients</div>
             </div>
             <div class="stat-divider"></div>
             <div class="stat">
-                <div class="stat-value">120+</div>
+                <div class="stat-value" data-target="120">0</div>
                 <div class="stat-label">Projects</div>
             </div>
             <div class="stat-divider"></div>
             <div class="stat">
-                <div class="stat-value">5+</div>
+                <div class="stat-value" data-target="5">0</div>
                 <div class="stat-label">Years</div>
             </div>
         </div>
@@ -738,6 +783,7 @@
             const preloader = document.getElementById('preloader');
             setTimeout(() => {
                 preloader.classList.add('loaded');
+                startCounterAnimation();
             }, 600);
         });
 
@@ -746,8 +792,96 @@
             const preloader = document.getElementById('preloader');
             if (preloader && !preloader.classList.contains('loaded')) {
                 preloader.classList.add('loaded');
+                startCounterAnimation();
             }
         }, 2500);
+
+        // 1. Dynamic Rolling Stats Number Counter
+        function startCounterAnimation() {
+            const statValues = document.querySelectorAll('.stat-value');
+            statValues.forEach(stat => {
+                const target = parseInt(stat.getAttribute('data-target'), 10);
+                const duration = 1600;
+                const startTime = performance.now();
+
+                function updateNumber(now) {
+                    const elapsed = now - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    // easeOutExpo
+                    const ease = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+                    const current = Math.floor(ease * target);
+                    stat.textContent = current + '+';
+
+                    if (progress < 1) {
+                        requestAnimationFrame(updateNumber);
+                    } else {
+                        stat.textContent = target + '+';
+                    }
+                }
+                requestAnimationFrame(updateNumber);
+            });
+        }
+
+        // 2. Interactive Cursor Dot & Ambient Glow Follower
+        const cursorDot = document.querySelector('.cursor-dot');
+        const cursorGlow = document.querySelector('.cursor-glow');
+
+        if (window.matchMedia('(hover: hover) and (min-width: 769px)').matches) {
+            let mouseX = window.innerWidth / 2;
+            let mouseY = window.innerHeight / 2;
+            let glowX = mouseX;
+            let glowY = mouseY;
+
+            window.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+
+                if (cursorDot) {
+                    cursorDot.style.left = `${mouseX}px`;
+                    cursorDot.style.top = `${mouseY}px`;
+                }
+            });
+
+            // Smooth RAF for the ambient glow
+            function renderGlow() {
+                glowX += (mouseX - glowX) * 0.08;
+                glowY += (mouseY - glowY) * 0.08;
+                if (cursorGlow) {
+                    cursorGlow.style.left = `${glowX}px`;
+                    cursorGlow.style.top = `${glowY}px`;
+                }
+                requestAnimationFrame(renderGlow);
+            }
+            renderGlow();
+
+            // Expand cursor dot over clickable elements
+            const interactables = document.querySelectorAll('a, .profile-avatar, .stat');
+            interactables.forEach(el => {
+                el.addEventListener('mouseenter', () => document.body.classList.add('cursor-active'));
+                el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-active'));
+            });
+
+            // 3. Subtle 3D Card Tilt with Dynamic Radial Flashlight Spotlight
+            const cards = document.querySelectorAll('.social-link');
+            cards.forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+
+                    const rotateX = ((y - centerY) / centerY) * -5;
+                    const rotateY = ((x - centerX) / centerX) * 5;
+
+                    card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px) scale(1.02)`;
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = '';
+                });
+            });
+        }
     </script>
 </body>
 </html>
