@@ -546,49 +546,55 @@
         }
 
         /* ---- Animations ---- */
-        @keyframes fadeUp {
-            from {
+        @keyframes popIn {
+            0% {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(32px) scale(0.92);
             }
-            to {
+            70% {
                 opacity: 1;
-                transform: translateY(0);
+                transform: translateY(-4px) scale(1.02);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
             }
         }
 
         .profile {
-            animation: fadeUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            opacity: 0;
+            animation: popIn 0.8s 0.1s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
         }
 
+        /* Boxes coming in one-by-one sequentially */
         .social-links .social-link:nth-child(1) {
             opacity: 0;
-            animation: fadeUp 0.6s 0.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            animation: popIn 0.7s 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
         }
 
         .social-links .social-link:nth-child(2) {
             opacity: 0;
-            animation: fadeUp 0.6s 0.35s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            animation: popIn 0.7s 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
         }
 
         .social-links .social-link:nth-child(3) {
             opacity: 0;
-            animation: fadeUp 0.6s 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            animation: popIn 0.7s 0.75s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
         }
 
         .social-links .social-link:nth-child(4) {
             opacity: 0;
-            animation: fadeUp 0.6s 0.65s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            animation: popIn 0.7s 0.95s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
         }
 
         .stats-bar {
             opacity: 0;
-            animation: fadeUp 0.6s 0.75s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            animation: popIn 0.7s 1.15s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
         }
 
         .footer {
             opacity: 0;
-            animation: fadeUp 0.6s 0.85s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            animation: popIn 0.6s 1.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
         }
 
         /* ---- Cursor Follower ---- */
@@ -796,30 +802,33 @@
             }
         }, 2500);
 
-        // 1. Dynamic Rolling Stats Number Counter
+        // 1. Rapid Fast Number Adding Counter
         function startCounterAnimation() {
-            const statValues = document.querySelectorAll('.stat-value');
-            statValues.forEach(stat => {
-                const target = parseInt(stat.getAttribute('data-target'), 10);
-                const duration = 1600;
-                const startTime = performance.now();
+            // Slight delay so the box lands first then numbers roll fast
+            setTimeout(() => {
+                const statValues = document.querySelectorAll('.stat-value');
+                statValues.forEach(stat => {
+                    const target = parseInt(stat.getAttribute('data-target'), 10);
+                    const duration = 900; // Fast and snappy counting
+                    const startTime = performance.now();
 
-                function updateNumber(now) {
-                    const elapsed = now - startTime;
-                    const progress = Math.min(elapsed / duration, 1);
-                    // easeOutExpo
-                    const ease = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
-                    const current = Math.floor(ease * target);
-                    stat.textContent = current + '+';
+                    function updateNumber(now) {
+                        const elapsed = now - startTime;
+                        const progress = Math.min(elapsed / duration, 1);
+                        // fast easeOutCubic
+                        const ease = 1 - Math.pow(1 - progress, 3);
+                        const current = Math.floor(ease * target);
+                        stat.textContent = current + '+';
 
-                    if (progress < 1) {
-                        requestAnimationFrame(updateNumber);
-                    } else {
-                        stat.textContent = target + '+';
+                        if (progress < 1) {
+                            requestAnimationFrame(updateNumber);
+                        } else {
+                            stat.textContent = target + '+';
+                        }
                     }
-                }
-                requestAnimationFrame(updateNumber);
-            });
+                    requestAnimationFrame(updateNumber);
+                });
+            }, 600);
         }
 
         // 2. Interactive Cursor Dot & Ambient Glow Follower
